@@ -11,4 +11,4 @@ Målet for Lab dag 1/2 er som følger
 
 ### Lab 3
 
-[Se labguid3 for detaljer](lab3/README.md)
+[Se lab guide for detaljer](lab03/README.md)
