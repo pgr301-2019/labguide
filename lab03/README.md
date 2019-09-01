@@ -9,9 +9,14 @@ hvis du ennå ikke har Docker på plass, må dette gjøres i denne labben
 
 I denne labben skal vi bli kjent med skytjenesten Heroku. Heroku er en tjenste i kategorien PAAS (Platform as a service). Den beste måten å bli kjent mer Heroku på, er å lage en Spring Boot applikasjon - og deploye den.
 
+## Installer CLI verktøy
+
+* Installer CLI for Heroku
+* Installer CLI for travis
+
 ### Lag en en eksempelapplikasjon med spring initializer
 
-Gå til https://start.spring.io/ - og lag en start-applikasjon etter eget ønske. Du må huske dependency "Web starter" - for å få ting til å fungere. Du må også lag en ny RESTController - for eksempel ved å ta utgangspunk i denne koden; 
+Gå til https://start.spring.io/ - og lag en start-applikasjon etter eget ønske (maven/gradle/cotlin/java). Du må huske minst en dependency "Web starter" - for å få ting til å fungere. Du må også lag en ny RESTController - for eksempel ved å ta utgangspunk i denne koden; 
 
 ```
 package com.glennbech.lab3;
