@@ -9,6 +9,8 @@ hvis du ennå ikke har Docker på plass, må dette gjøres i denne labben
 
 I denne labben skal vi bli kjent med skytjenesten Heroku. Heroku er en tjenste i kategorien PAAS (Platform as a service). Den beste måten å bli kjent mer Heroku på, er å lage en Spring Boot applikasjon - og deploye den.
 
+Vi skal  også bli kjent med Travis som er en SAAS løsning for CI med en generøs gratisplan. 
+
 ## Registrer for tjenester
 
 * Registrer som bruker på GitHub (hvis ikke fra før)
