@@ -57,3 +57,7 @@ Alternativt kan du ta utgangspunkt i dette repositoryet; https://github.com/pgr3
 
 Pakk ut applikasjonen i en mappe på maskinen din - og følg instruksjonene https://devcenter.heroku.com/articles/git
 helt frem til avsnittet "https://devcenter.heroku.com/articles/git#http-git-authentication"
+
+### Konfigurer bygging av applikasjonen med Travis
+
+### Konfigurer deployment til Heroku med Travis
