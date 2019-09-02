@@ -15,7 +15,7 @@ Vi skal  også bli kjent med Travis som er en SAAS løsning for CI med en gener�
 
 * Registrer som bruker på GitHub (hvis ikke fra før)
 * Registrer som ny bruker på Heroku
-* Registrer som ny bruker på Travis
+* Registrer som ny bruker på Travis - med GitHub brukeren din som identitet
 
 ## Installer CLI verktøy
 
@@ -58,8 +58,34 @@ Alternativt kan du ta utgangspunkt i dette repositoryet; https://github.com/pgr3
 ### Deploy applikasjonen på Heroku.
 
 Pakk ut applikasjonen i en mappe på maskinen din - og følg instruksjonene https://devcenter.heroku.com/articles/git
-helt frem til avsnittet "https://devcenter.heroku.com/articles/git#http-git-authentication"
+stop  ved avsnittet "https://devcenter.heroku.com/articles/git#http-git-authentication"
+
+### Lag et nytt Github repo
+
+Lag et nytt GitHub repo i din konto - og sjekk koden inn der. 
+
+```
+git remote add origin git@github.com:glennbech/demo.git
+git push -u origin master
+```
 
 ### Konfigurer bygging av applikasjonen med Travis
 
+https://docs.travis-ci.com/user/tutorial/
+
 ### Konfigurer deployment til Heroku med Travis
+
+https://docs.travis-ci.com/user/deployment/heroku/
+
+NB! Eksempelet i dokumentasjonen forutsetter samsvar mellom GitHub repo-navn og Heroku applikasjon. Hvis dere bare har valgt et default Heroku navn - så vil dere få problemer. Dere må legge til "app" property. .travis_yml skal se tilsvarende dette ut etter dere har lagt til kryptert API nøkkel 
+
+```language: java
+deploy:
+  provider: heroku
+  app: murmuring-hamlet-96561
+  api_key:
+    secure: mZ7v/zvjmmDTIFoQ9wwurbTl28KClhTYfr4JOxTiUeD04lKaaYo5722LoqDG9W2kBaiZ/uZJzmvduO8yqKrvgQRssQybh3mgiAWy36idWtAmJJ3+2VJuVCmVs4cSQxVwVJeRPBEzmavFIQa7GXIzVnOPdDzpgkZVcF3P6cbyMKHgb45GvAxGasgOMRySe/k1Lq3mprMng50HC2QSy6rSui0lUCaPjy3N582e0HFM6SnFCXXhDw2yvyMeYa+gwuvLL4F/eIJjUxNJQ3z9OeX/tFoMswieVzPu08n8xBMc1z6+QdUqyk6XMxzJYMod6WW9RW/71Vu/OYNk9iPZEWfLAODXI22uNW7cofu5iKRRwUzKVM6kkGXIFHXpuRJkKK+1n/4eQvTIxT1lP6L0RoOHklverqB4INkE9GsV3avcgT7hdTZe4ryBrzYvTnkc0UiBaov0KpEBYKXNfg4VasOZ7II1/8HgNSJBR6Iuc7uHAZcqYEoF0EWqF31/FsCMUeaY6dZmXQVcBb+VTFg9puu4OMs76xOWqBlyjvWzyq95RDKKyXteo/Qudsl6R3UtNz6PpfVzOoDne8BA3MALzHp0pg2RQ1xVuteOZw/DXtwRpYxNqZVfSXti1yRm5qQp/nxy3oS8Zva5jlQgoc4JKbj9n4odJA8psolnv0IGr+WkvnU=
+```
+
+
+
