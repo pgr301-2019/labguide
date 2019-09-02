@@ -26,7 +26,7 @@ Vi skal  også bli kjent med Travis som er en SAAS løsning for CI med en gener�
 
 Gå til https://start.spring.io/ - og lag en start-applikasjon etter eget ønske (maven/gradle/cotlin/java). Du må huske minst en dependency "Web starter" - for å få ting til å fungere. Du må også lag en ny RESTController - for eksempel ved å ta utgangspunk i denne koden; 
 
-```
+```java
 package com.glennbech.lab3;
 
 import org.springframework.boot.SpringApplication;
