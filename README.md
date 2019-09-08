@@ -10,9 +10,11 @@ Målet for Lab dag 1/2 er som følger
 - Du skal ha en Github bruker, og sende brukernavnet til post@glennbech.no
 
 ### Lab 3
+Github for versjonskontroll, Travis for bygg & deploy, blir kjent med Heroku og deployment. 
 
 [Se lab guide for detaljer](lab03/README.md)
 
-### Lab 3
+### Lab 4
+Heroku pipelines
 
 [Se lab guide for detaljer](lab04/README.md)
