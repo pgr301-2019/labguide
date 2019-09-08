@@ -17,4 +17,4 @@ Github for versjonskontroll, Travis for bygg & deploy, blir kjent med Heroku og 
 ### Lab 4
 Heroku pipelines
 
-[Se lab guide for detaljer](lab04/README.md)
+[Se lab guide for detaljer](lab04.md)
