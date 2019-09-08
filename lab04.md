@@ -14,7 +14,7 @@ Målet med oppgaven er at Travis skal gjøre kontinuerlig deployment av applikas
 
 # Se på instruksjonene i Heroku dokumentasjon
 
-https://devcenter.heroku.com/articles/pipelines 
+https://devcenter.heroku.com/articles/pipelines  - stopp ved "Pipelines ownership and transfer"
 
 Improviser med følgende; 
 
