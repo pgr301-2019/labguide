@@ -16,13 +16,8 @@ Målet med oppgaven er at Travis skal gjøre kontinuerlig deployment av applikas
 
 https://devcenter.heroku.com/articles/pipelines 
 
-Her skal du bruke applikasjonen fra forrige lab i pipeline i "Staging". 
+Improviser med følgende; 
 
+* Her skal du bruke applikasjonen fra forrige lab i pipeline i "Staging". 
 * Lag en ny app for production 
-
-Sluttresultatet skal være som følger; 
-
-* Du skal kunne gjøre commit mot github - travis skal bygge og deploye koden til staging
-* Du skal kunne promotere staging til production i UI og på kommandolinje 
- 
   
