@@ -21,3 +21,13 @@ Improviser med følgende;
 * Her skal du bruke applikasjonen fra forrige lab i pipeline i "Staging". 
 * Lag en ny app for production 
   
+# Legg feature toggles til applikasjonen 
+
+Togglz rammeverket kan brukes til dette; 
+
+https://github.com/togglz/togglz
+
+Quick start guide er her; https://www.togglz.org/
+ 
+For eksempel på bygg med gradle og Javakode kan dere se på min demo-applikasjon - https://github.com/glennbech/demo32 - 
+
