@@ -10,53 +10,42 @@ På den måten kan de som måtte ønske å ta løsningen i bruk ( for eksempel e
 
 ## Beskrivelse
 
-DominiGeiger er et selskap som skal starte salg av personlige «wearable» geigertellere til privatpersoner i Europa. Veksten har vært astronomisk grunnet en befolkning 
-i stor panikk etter serien «Chernobyl» på HBO. Prosjektet er viktig for selskapet som ogspå planlegger en Japansk Franchise av Serien som skal hete «Fukushima Daiichi » med de samme skuespillerne i 2020.
+DominiGeiger er et selskap som skal starte salg av personlige «wearable» geigertellere til privatpersoner i Europa. Veksten har vært astronomisk grunnet en befolkning i stor panikk etter serien «Chernobyl» på HBO. Prosjektet er viktig for selskapet som ogspå planlegger utvidelse i Asia etter det ble kjent at Japansk Franchise, «Fukushima Daiichi » også skal vises på HBO i 2020.
 
 Data kommer inn i høy hastighet, over HTTP, og det forventes at nær 90% av familier i Europa,  med høy grad av strålingsangst,  vil skaffe seg en slik teller. Dette er naturligvis bra for DominiGeiger, men det betyr samtidig at løsningen må skaledere bra, og de har valgt å satse på skyen. 
 
-Geigertellerne er festet på brukerens klær, og derfor samler DomiGeiger inn hyppig og nøyaktig lokasjonsdata. Denne informasjonen skal selges til store internasjonale selskaper i  en auksjonsløsning som skal utvikles.
+Geigertellerne er festet på brukerens klær, og derfor samler DomiGeiger inn hyppig og nøyaktig lokasjonsdata. Denne informasjonen skal selges til store internasjonale selskaper i  en auksjonsløsning som skal utvikles senere (ikke en del av oppgaven)
 
-Din oppgave er å få prosjektet i gang på riktig måte med DevOps prinispper. 
+Din jobb er å få prosjektet raskt i gang på riktig måte, med DevOps prinispper. 
 
 ## Krav til leveransen
 
-Applikasjonen og tilhørende DevOps infrastruktur skal gjøres tilgjenglig i  GitHib repositories.
+Applikasjonen og tilhørende DevOps infrastruktur skal gjøres tilgjenglig i GitHib repositories.
 
 * Du må lage en annonym Github bruker - brukernavnet må være utformet slik at det ikke går ann å utlede hvem du er basert på navnet. 
 * Repositories som du lagert må være offentlige
 * Det må ikke være mulig ut ifra koden å identifsere studenten. Det er viktig å ikke benytte @author tags osv.
 * Du skal levere et dokument (tekstfil) i wiseflow som lenker til relevante repositories i GitHub 
-* I infra-repository sin README skal det går klart frem hvilke oppgaver du har valgt å løse. Andre instruksjoner skal også ligge der. 
-* Infra-repository skal inneholde en credentials_example.yml som eksemplifiserer nødvendige hemmeligheter som er nødvendig for pipeline (github_tokens, deploy keys, api keys til diverse tjenester osv).
 
 Det skal lages to repositories,
 
-* Ett til infrastruktur (terraform/ci)
-* Ett for en applikasjon.
-
-Studentene skal sende lenke til disse repositoriene til eksaminator. Dette er den eneste innleveringen som skal gjøres.
+* Infrastruktur (terraform/ci)
+* Applikasjon.
 
 ## Krav til Applikasjonen
 
-* REST Endepunkt for ny bruker. Svare på POST til /customer og returnere et objekt med en unik identifikator
-* REST Endepunkt for ny måling av stråling. POST /measurement/{customerId}  
-* REST Endepunkt for å hente all data for en bruker. GET til /customer/{id}
+* REST Endepunkt for ny geigerteller. Svare på POST til /device og returnere et objekt med en unik identifikator
+* REST Endepunkt for ny måling av stråling. POST /device/{deviceId}  
+* REST Endepunkt for å liste alle tellere. GET til /device
+* REST Endepunkt for å hente all data for en bruker. GET til /device/{id}
 
-Applikasjonen skal være skrevet på en slik måte at drift og vedlikehold er enkelt og i henhold til 
-prinsipper i [the twelve factor app](https://12factor.net/)
-
-De viktigste prinsippene og overholde er ;
-
-* III Config. Ignen hemmeligheter eller konfigurasjon i applikasjonen (ingen application.properties med med passord/brukere/URLer.
-* XI Logs. Applikasjonen skal bruke et rammeverk for logging, og logge til Stdout (SL4J eller liknende)
-* X Dev/Prod parity - Applikasjonen bør kunne kjøre i identisk infrastruktur i alle miljløer (utviklking, stage, prod, og lokal utviklingsmaskin). Etterstreb å jobbe loaklt, ved å kjøre heroku local.
+Payload for REST endepunkter kan dere bestemme selv. 
 
 ## Krav til Infrastruktur
 
 * Det skal opprettes tre identiske miljøer
 
-- CI (Contuinous integraiton) - Master branch i applikasjon-repository skal til enhver tid installeres i dette miljøet.   
+- CI (Contuinous integration) - Master branch i applikasjon-repository skal til enhver tid installeres i dette miljøet.   
 - Stage - Dette er et miljø som typisk brukes for tester, for eksmpel ytelses- eller sikkerhetstester.
 - Prod - Dette er miljøet som kundene- eller brukerene av løsningen opplever.
 
