@@ -37,7 +37,7 @@ Det skal lages to repositories,
 * REST Endepunkt for ny geigerteller. Svare på POST til /device og returnere et objekt med en unik identifikator
 * REST Endepunkt for ny måling av stråling. POST /device/{deviceId}  
 * REST Endepunkt for å liste alle tellere. GET til /device
-* REST Endepunkt for å hente all data for en bruker. GET til /device/{id}
+* REST Endepunkt for å hente alle målinger for en device. GET til /device/{id}
 
 Payload for REST endepunkter kan dere bestemme selv. 
 
@@ -63,8 +63,9 @@ Det skal lages en CI/CDpipeline for applikasjonen.
 
 Fullstendig oversikt over kriteriene for vurdering blir gitt innen tidsfrist. I grove trekk vil følgende bli vektlagt
 
-### Bruk av  Docker - Oppgaven kan løses ved hjelp av Heroku og deres løsning for bygg av artifakter (slugs).
-Evalueringen vil gi poeng for bruk av Docker - en mer plattformnøttral teknolog
+### Bruk av Docker 
+
+Oppgaven kan løses ved hjelp av Heroku og deres løsning for bygg av artifakter (slugs). Evalueringen vil gi poeng for bruk av Docker - en mer plattformnøttral teknologi
 
 ### Overvåkning og varsling 
 
