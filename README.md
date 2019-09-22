@@ -45,7 +45,12 @@ Du skal gjøre følgende
 * Legg til en GitHub "Power up" til boardet.
 * Sjekk at du kan lage en pull request i GitHub, og knytte den mot et "kort" i trello. Legg den til QA. For å få til dette er det enklest å knytte kortet til et offentlig repository
 
+Mer avansert Terraform 
 
+* Du skal lage en terraform modul, og publisere den på et offentlig github repository 
+* Du skal konsumere en terraform modul som med medstudent publiserer på et offentlig GitHub repository
+
+Det er lov å se på en eksemp klient https://github.com/pgr301-2019/terraform-module-client til en eksempel modul  https://github.com/pgr301-2019/terraform-module-example for inspirasjon - men finn grerne på moe selv.  Når dere er ferdig, post GitHub URL til kopmpoenten deres på Slack. 
 
 
 
