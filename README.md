@@ -31,4 +31,21 @@ https://github.com/PGR301-2018/heroku_example
 Nå skal dere bruke dokumentasjonen, og lage en hel pipeline - https://www.terraform.io/docs/providers/heroku/index.html
 
 
+## Lab 6 
+
+Gjøre arbeid synlig 
+
+I denne øvingen skal vi leke med trello.com - og lage et Team, og et Kanban board som er knyttet til et GitHub repository. 
+
+Du skal gjøre følgende
+
+* Registrer deg på trello.com - det er gratis. 
+* Lag et team, og inviter minst en medstudent 
+* Lag en nytt board - og lag passende kolonner (TODO, In progress, QA, Done , Prod - som eksempel) 
+* Legg til en GitHub "Power up" til boardet.
+* Sjekk at du kan lage en pull request i GitHub, og knytte den mot et "kort" i trello. Legg den til QA. For å få til dette er det enklest å knytte kortet til et offentlig repository
+
+
+
+
 
