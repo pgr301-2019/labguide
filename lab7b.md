@@ -3,6 +3,8 @@
 Før dere begynner
 
 * Pass på at dere har travis CLI installert
+* Dere må ta utgangspunkt i et prosjekt gjort i tidligere lab, som bygger og deployer en enkel Spring Boot applikasjon ved hjelp av Travis
+* Dere trenger ikke tenke på Heroky deployment i denne labben, og dere kan ta utgangspunkt i en tidligere lab som ikke deployer til Heroku for å redusere kompeksitet. 
 
 ## Sette miljøvariable for prosjektet
 
