@@ -86,4 +86,25 @@ Skal du få en output som ser slik ut ;
  For more examples and ideas, visit:
   https://docs.docker.com/userguide/```
 
+For å lage en Docker Container av Spring Boot applikasjonen din må du lage en Dockerfile
 
+```
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","app.jar"
+```
+
+For å bruke Docker til å lage et Container Image kjører dere. Artifactname er filnavnet på JAR filen. 
+Merk at dere må bygge med Maven eller Gradle før dere kjører kommandoen
+
+```
+docker build . --tag pgr301 --build-arg build/libs/<artifactname>
+```
+
+For å starte en Container, kan dere kjøre 
+
+```
+docker run pgr301:latest
+```
