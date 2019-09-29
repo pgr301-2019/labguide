@@ -111,3 +111,11 @@ For å starte en Container, kan dere kjøre
 docker run pgr301:latest
 ```
 
+Vent litt. Dette fungerte jo ikke; dere må eksponere port 8080 fra Containeren på maskinen din. Dette kalles port mapping. 
+
+```bash
+ docker run -p 8080:8080 pgr301:latest
+ ```
+ 
+
+
