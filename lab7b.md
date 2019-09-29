@@ -1,17 +1,16 @@
 # Vi lar Travis bygge og deploye container image
 
-## Sette miljøvariable fro prosjektet
+Før dere begynner
 
-Travis kan lagre miljøvariabler perrepository. Les igjennom dokumentasjonen (https://docs.travis-ci.com/user/environment-variables/) for bruk av disse
+* Pass på at dere har travis CLI installert
 
-Jeg vil anbefale å ikke sette inn docker hub passordet på følgende måte; 
+## Sette miljøvariable for prosjektet
 
-```
-travis login
-travis env set DOCKER_USERNAME myusername
-travis env set DOCKER_PASSWORD secretsecret
-```
-Men istedet
+For at Travis skal kunne jobbe på vegne av deg mot Docker Hub trenger vi i å Travis nødvendige "credentials"
+
+Travis kan lagre miljøvariabler per repository. Les igjennom dokumentasjonen (https://docs.travis-ci.com/user/environment-variables/) for bruk av disse
+
+Brukernavn er ikke spesielt sensitivt (kanskje) så det legger vi inn på følgende måte 
 
 ```
 travis login
@@ -23,6 +22,7 @@ og etterpå
 ```
 travis encrypt DOCKER_PASSWORD=<password> --add env.matrix
 ```
+
 Dette krypterer passordet med en offentlig nøkkel som er spesifikt for et repository, og legger det krypterte passordet inn i .travis.yml filen. Fordi kun travis CI, har den private nøkkelen kan dette nå trygt sjekkes inn i versjonskontroll. 
 
 Vi vil lage et shell script som gjør det vi gjorde på Docker kommandolinje - og legge dett til i prosjektet.
@@ -44,4 +44,3 @@ deploy:
   on:
     branch: master
 ```
-
