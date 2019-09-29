@@ -61,4 +61,29 @@ Vent litt. Dette fungerte jo ikke; dere må eksponere port 8080 fra Containeren 
 ```bash
  docker run -p 8080:8080 pgr301:latest
  ```
+# Docker hub
+ 
+Docker hub er en tjeneste som gjør det mulig å lagre container images sentralt, og dele disse med hele verden - eller bare et prosjekt eller team/organisasjon. 
+
+For å fullføre denne labben må dere registrere dere på Dockerub. Dere skal deretter bygge  et container images lokalt - og "pushe" dette til Docker Hub.
+
+## Registrer deg som bruker på Docker Hub
+
+https://www.docker.com/products/docker-hub
+
+## Bygg container image og push til docker hub
+
+```
+docker login
+docker tag <tag> <username>/<tag_remote>
+docker push
+```
+
+Verdien <tag> er en *tag* som du bestemte deg for når du gjorde docker build. <tag_remote> kan du bestemme deg for, fordi det er verdien som skal brukes for docker hub. 
+
+
+
+
+
+
  
