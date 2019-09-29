@@ -23,7 +23,7 @@ og etterpå
 ```
 travis encrypt DOCKER_PASSWORD=<password> --add env.matrix
 ```
-Dette krypterer passordet med en offentlig nøkkel som er spesifikt for repository, og legger det krypterte passordet inn i .travis.yml filen i prosjektet. Fordi travis CI, og bare de har den private delen av nøkkelen kan dette nå trygt sjekkes inn i versjonskontroll. 
+Dette krypterer passordet med en offentlig nøkkel som er spesifikt for et repository, og legger det krypterte passordet inn i .travis.yml filen. Fordi kun travis CI, har den private nøkkelen kan dette nå trygt sjekkes inn i versjonskontroll. 
 
 Vi vil lage et shell script som gjør det vi gjorde på Docker kommandolinje - og legge dett til i prosjektet.
 
