@@ -81,6 +81,14 @@ docker push
 
 Verdien <tag> er en *tag* som du bestemte deg for når du gjorde docker build. <tag_remote> kan du bestemme deg for, fordi det er verdien som skal brukes for docker hub. 
 
+## Del på Slack
+
+Når dere har pushet container image til Docker Hub - del navnet på slack (brukernavn/image) - og forsøk å kjøre andre sine images slik 
+
+```
+docker run brukernavn/image 
+```
+Husk eventuelle port mappings.
 
 
 
