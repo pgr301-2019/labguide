@@ -52,5 +52,10 @@ Mer avansert Terraform
 
 Det er lov å se på en eksemp klient https://github.com/pgr301-2019/terraform-module-client til en eksempel modul  https://github.com/pgr301-2019/terraform-module-example for inspirasjon - men finn grerne på moe selv.  Når dere er ferdig, post GitHub URL til kopmpoenten deres på Slack. 
 
+### LAB 7
+
+I denne labben skal vi lage en en Docker Container av en Spring Boot applikasjon, kjøre den lokalt, og laste den opp til Docker Hub. Vi skal også få Travis til å gjøre denne jobben for oss som respons på en endring i repository 
+
+[Se lab guide for detaljer](lab07.md)
 
 
