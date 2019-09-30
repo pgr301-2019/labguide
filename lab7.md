@@ -43,12 +43,13 @@ ENTRYPOINT ["java","-jar","app.jar"]
 
 ```
 
-For å bruke Docker til å lage et Container Image kjører dere. Artifactname er filnavnet på JAR filen. 
-Merk at dere må bygge med Maven eller Gradle før dere kjører kommandoen
-
+For å bruke Docker til å lage et Container Image kjører dere; 
 ```sh
 docker build . --tag pgr301 --build-arg JAR_FILE=./build/libs/<artifactname>
 ```
+Artifactname er filnavnet på JAR filen. 
+Merk at dere må bygge med Maven eller Gradle før dere kjører kommandoen
+
 
 For å starte en Container, kan dere kjøre 
 
