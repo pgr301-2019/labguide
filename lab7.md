@@ -47,7 +47,7 @@ For å bruke Docker til å lage et Container Image kjører dere. Artifactname er
 Merk at dere må bygge med Maven eller Gradle før dere kjører kommandoen
 
 ```sh
-docker build . --tag pgr301 --build-arg build/libs/<artifactname>
+docker build . --tag pgr301 --build-arg JAR_FILE=build/libs/<artifactname>
 ```
 
 For å starte en Container, kan dere kjøre 
