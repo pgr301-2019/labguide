@@ -27,7 +27,8 @@ travis encrypt DOCKER_PASSWORD=<password> --add env.matrix
 
 Dette krypterer passordet med en offentlig nøkkel som er spesifikt for et repository, og legger det krypterte passordet inn i .travis.yml filen. Fordi kun travis CI, har den private nøkkelen kan dette nå trygt sjekkes inn i versjonskontroll. 
 
-Vi vil lage et shell script som gjør det vi gjorde på Docker kommandolinje - og legge dett til i prosjektet.
+Vi vil lage et shell script som gjør det vi gjorde på Docker kommandolinje - og legge dett til i prosjektet. 
+Legg denne til i prosjektet på rot-nivå som *push.sh*
 
 ```sh
 #!/bin/bash
@@ -37,13 +38,19 @@ docker tag <image_name> <dockerhub_username>/<image_name>:latest
 docker push <dockerhub_username>/pgr301
 ```
 
-Så må vi vi endre i .travis.yml
+Så må vi vi endre i .travis.yml - den skl se slik ut;
+
+I starten under Language, og følgende
 
 ``` 
+language: java
+services:
+  - docker
 deploy:
   skip_cleanup: true
   provider: script
   script: bash push.sh
   on:
     branch: master
+
 ```
