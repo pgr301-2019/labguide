@@ -41,6 +41,7 @@ Så må vi vi endre i .travis.yml
 
 ``` 
 deploy:
+  skip_cleanup: true
   provider: script
   script: bash push.sh
   on:
