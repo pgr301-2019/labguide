@@ -76,7 +76,7 @@ https://www.docker.com/products/docker-hub
 ```
 docker login
 docker tag <tag> <username>/<tag_remote>
-docker push
+docker push <username>/<tag_remote>
 ```
 
 Verdien <tag> er en *tag* som du bestemte deg for når du gjorde docker build. <tag_remote> kan du bestemme deg for, fordi det er verdien som skal brukes for docker hub. 
