@@ -59,3 +59,9 @@ I denne labben skal vi lage en en Docker Container av en Spring Boot applikasjon
 [Se lab guide for detaljer](lab7.md)
 
 
+### LAB 8
+
+I denne øvingen skal vi bli kjent med Metrics-rammeverket Micrometer for Spring Boot, og hvordan vi kan lagre data i en lokal influxDB Time series database 
+
+[Se lab guide for detaljer](lab8.md)
+
