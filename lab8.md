@@ -25,7 +25,7 @@ docker run --name influxdb \
   -v $PWD/influxdb:/var/lib/influxdb \
   -v $PWD/influxdb.conf:/etc/influxdb/influxdb.conf:ro \
   -v $PWD/types.db:/usr/share/collectd/types.db:ro \
-  infuxdb:1.0
+  influxdb:1.0
 ````
 
 hvis dere går til http://localhost:8083/ får dere opp et enkelt brukergrensesnitt. 
