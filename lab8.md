@@ -48,4 +48,5 @@ Klassene deres kan da AutoWire inn en Spring Bean av typen MeterRegistry
 
 # Ekstraoppgave
 
-Start Grafana lokalt med Docker - og få den til å vise data fra InfluxDB
+* Start Grafana lokalt med Docker - og få den til å vise data fra InfluxDB
+* Deploy til Heroku og push metrikker til SAAS InfluxDB https://www.influxdata.com/products/influxdb-cloud/
