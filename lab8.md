@@ -46,6 +46,11 @@ Klassene deres kan da AutoWire inn en Spring Bean av typen MeterRegistry
   private MeterRegistry meterRegistry;
 ```
 
+Oppgave;
+
+Leg med ulike typer metrikker (Distribution summary, Counter, Gauge, Timer etc)
+
+
 # Ekstraoppgave
 
 * Start Grafana lokalt med Docker - og få den til å vise data fra InfluxDB
