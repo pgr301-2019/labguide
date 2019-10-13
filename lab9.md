@@ -20,7 +20,8 @@ terraform {
     key    = "<unik_id>/terraform.tfstate"
     region = "eu-north-1"
   }
-}```
+}
+```
 
 # Infrastruktur - repo
 
