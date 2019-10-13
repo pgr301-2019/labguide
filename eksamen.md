@@ -2,7 +2,7 @@
 
 ## Fra Læreplan
 
-"Egenutviklet applikasjon (eller prototype) med tilhørende dokumentasjon: teller 100% av karakteren i emnet. Applikasjonen skal være utviklet, og være vedlikeholdbar, i et DevOps- miljø i skyen. Kildekode, og annen dokumentasjon, skal gjøres tilgjengelig for allmenheten."
+Egenutviklet applikasjon (eller prototype) med tilhørende dokumentasjon: teller 100% av karakteren i emnet. Applikasjonen skal være utviklet, og være vedlikeholdbar, i et DevOps- miljø i skyen. Kildekode, og annen dokumentasjon, skal gjøres tilgjengelig for allmenheten."
 
 Siden et kontinuerlig kjørende DevOps-miljø kan være kostnadsbærende for studentene vil vi lette på kravet om miljøet skal kjøre kontinuerlig i skyen. Applikasjonen må istedet være mulig å etablere i skyen ved hjelp av infrastruktur som kode (Terraform) - og enkel automatisering.
 
@@ -10,74 +10,89 @@ På den måten kan de som måtte ønske å ta løsningen i bruk ( for eksempel e
 
 ## Beskrivelse
 
-DominiGeiger er et selskap som skal starte salg av personlige «wearable» geigertellere til privatpersoner i Europa. Veksten har vært astronomisk grunnet en befolkning i stor panikk etter serien «Chernobyl» på HBO. Prosjektet er viktig for selskapet som ogspå planlegger utvidelse i Asia etter det ble kjent at Japansk Franchise, «Fukushima Daiichi » også skal vises på HBO i 2020.
+"DominiGeiger" er et selskap som skal starte salg av personlige «wearable» geigertellere til privatpersoner i Europa. Veksten har vært astronomisk grunnet en befolkning i stor panikk etter serien «Chernobyl» på HBO. Selskapet  planlegger utvidelse i Asia etter det ble kjent at Japansk Franchise, «Fukushima Daiichi » også skal vises på HBO i 2020.
 
-Data kommer inn i høy hastighet, over HTTP, og det forventes at nær 90% av familier i Europa,  med høy grad av strålingsangst,  vil skaffe seg en slik teller. Dette er naturligvis bra for DominiGeiger, men det betyr samtidig at løsningen må skaledere bra, og de har valgt å satse på skyen. 
+Data kommer inn i høy hastighet, over HTTP, og det forventes at nær 90% av familier i Europa,  med høy grad av strålingsangst,  vil skaffe seg en slik teller. Dette er naturligvis bra for DominiGeiger, men det betyr samtidig at løsningen må skaledere bra, og de har derfor valgt å satse på skyen.
 
-Geigertellerne er festet på brukerens klær, og derfor samler DomiGeiger inn hyppig og nøyaktig lokasjonsdata. Denne informasjonen skal selges til store internasjonale selskaper i  en auksjonsløsning som skal utvikles senere (ikke en del av oppgaven)
+Geigertellerne er festet på brukerens klær, og derfor samler DomiGeiger inn hyppig og nøyaktig lokasjonsdata. Denne informasjonen skal selges til store internasjonale selskaper i en auksjonsløsning som skal utvikles senere (ikke en del av oppgaven)
 
-Din jobb er å få prosjektet raskt i gang på riktig måte, med DevOps prinispper. 
-
-## Krav til leveransen
-
-Applikasjonen og tilhørende DevOps infrastruktur skal gjøres tilgjenglig i GitHib repositories.
-
-* Du må lage en annonym Github bruker - brukernavnet må være utformet slik at det ikke går ann å utlede hvem du er basert på navnet. 
-* Repositories som du lagert må være offentlige
-* Det må ikke være mulig ut ifra koden å identifsere studenten. Det er viktig å ikke benytte @author tags osv.
-* Du skal levere et dokument (tekstfil) i wiseflow som lenker til relevante repositories i GitHub 
-
-Det skal lages to repositories,
-
-* Infrastruktur (terraform/ci)
-* Applikasjon.
+Din jobb er å få prosjektet raskt i gang på riktig måte, med DevOps prinispper.
 
 ## Krav til Applikasjonen
 
-* REST Endepunkt for ny geigerteller. Svare på POST til /device og returnere et objekt med en unik identifikator
-* REST Endepunkt for ny måling av stråling. POST /device/{deviceId}  
-* REST Endepunkt for å liste alle tellere. GET til /device
-* REST Endepunkt for å hente alle målinger for en device. GET til /device/{id}
+* REST Endepunkt for ny geigerteller. Svare på POST til /device og returnere et objekt med en unik identifikator "deviceId"
+* REST Endepunkt for ny måling av stråling og lokasjon (lat, lng). POST /device/{deviceId}/measurement  
+* REST Endepunkt for å hente en eller flere målinger for en device. GET til /device/{id}/measurements
+* REST Endepunkt for å liste alle tellere. GET til /devices
 
-Payload for REST endepunkter kan dere bestemme selv. 
 
-## Krav til Infrastruktur
+Payload for REST endepunkter kan dere bestemme selv.
 
-* Det skal opprettes tre identiske miljøer
+## Krav til leveransen
 
-- CI (Contuinous integration) - Master branch i applikasjon-repository skal til enhver tid installeres i dette miljøet.   
-- Stage - Dette er et miljø som typisk brukes for tester, for eksmpel ytelses- eller sikkerhetstester.
-- Prod - Dette er miljøet som kundene- eller brukerene av løsningen opplever.
-
-Nødvendig infrastruktur skal så langt det lar seg gjøre opprettes med Terraform. Det skal ikke være nødvendig å for eksaminator å ha terraform installert på PC for å etablere infrastrukturen - terraformkoden skal kjøres av CI/CD verktøy For Infrastruktur som på ingen måte kan opprettes med Terraform, kan dere lage instruksjoner i README.md i <infra-repository>    
-
-## Krav til DevOps Pipeline
-
-Det skal lages en CI/CDpipeline for applikasjonen.
-
-* CI/CD Pipeline skal bygge både infrastruktur og kode.
-* Pipeline skal kontinuerlig deploye hver commit på master branch til "CI" miljøet.
-* Deployment fra CI-miljø videre til Stage og produksjon skal i utgangspunktet skje manuelt ved at man promoterer applikasjonen i Heroku UI () slik vi har gjort det i øvingene). Studentene kan fritt velge å implementre kontinuerlig deployment til stage, og fra stage til prod - men det gis ikke poeng for dette.
+* Applikasjonen og tilhørende DevOps infrastruktur skal gjøres tilgjenglig i GitHib en eller flere repositories. Du står fritt til å velge hvor mange.
+* Repositories som du lagert må være offentlige
+* Du må lage en annonym Github bruker - brukernavnet må være utformet slik at det ikke går ann å utlede hvem du er basert på navnet.(Det må ikke være mulig ut ifra koden å identifsere studenten. Det er viktig å ikke benytte @author tags osv.)
+* Du skal levere et dokument (tekstfil) i wiseflow som lenker til relevante repositories i GitHub.
+* Applikasjonen må ha database, men kan bruke en "embeded" som feks H2
+* Applikasjonen må ha enhetstester, testdekning er ikke viktig.
 
 ## Evaluering
 
-Fullstendig oversikt over kriteriene for vurdering blir gitt innen tidsfrist. I grove trekk vil følgende bli vektlagt
+Applikasjonen skal være skrevet i henhold til  prinsipper i [the twelve factor app](https://12factor.net/)
 
-### Bruk av Docker 
+Det vil bli gitt en Score per oppgave; Pipeline, Docker, Overvåkning, Metrics og logger. Samlet score, sammen med en vurdering av applikasjonen sin etterlevelser av 12 factor, gir grunnlag for karakter.
 
-Oppgaven kan løses ved hjelp av Heroku og deres løsning for bygg av artifakter (slugs). Evalueringen vil gi poeng for bruk av Docker - en mer plattformnøttral teknologi
+# Oppgave 1 -  Pipeline
 
-### Overvåkning og varsling 
+## Infrastruktur
 
-Evalueringen vil basere seg på hvordan løsningen kan overvåkes - og hvordan varsling skjer ved feil. 
+* Det skal opprettes tre miljøer
 
-### Metrics 
+- CI (Contuinous integration) - Master branch i applikasjon-repository skal til enhver tid deployes i dette miljøet, dersom enhetstestene i prosjektet ikke feiler.
+- Stage - Dette er et miljø som typisk brukes for tester, for eksmpel ytelses- eller sikkerhetstester.
+- Prod - Dette er miljøet som kundene- eller brukerene av løsningen opplever.
 
-Evalueringen vil ta hensyn til hvordan applikasjonen gir fra seg egendefinerte metrics. Med det menes at man på valgte steder i applikasjonskoden skal logge datapunkter.
+Nødvendig infrastruktur skal så opprettes med Terraform. Dere kan anta at eksaminator har terraform installert på PC for å etablere infrastrukturen. Instruksjoner til eksamninator skal gis i en README fil.
 
-### Logging 
+## Oppgave 1 - CI Pipeline
 
-Evalueringen vil ta hensyn til hvordan applikasjonen logger og legger til rette for sentralisert eller desentralisert loganalyse 
+Det skal lages en CI/CDpipeline for applikasjonen ved hjelp av Travis CI
 
+* CI/CD Pipeline skal bygge både infrastruktur og kode.
+* Pipeline skal  deploye hver commit på master branch til "CI" miljøet.
+* Deployment fra CI-miljø videre til Stage og produksjon skal i utgangspunktet skje manuelt ved at man promoterer applikasjonen i Heroku UI (Eller CLI). Studentene kan fritt velge å implementre kontinuerlig deployment til stage, og fra stage til prod - men det gis ikke poeng for dette.
 
-LYKKE TIL !!
+# Oppgave 2 Docker
+
+I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch. Travis skal også gjøre en push til DockerHub.
+
+Oppgaver som må løses
+
+* Du skal skrive en Dockerfil som kan brukes for å bygge et Container Image av Spring Boot applikasjonen din.
+* Du skal  utvide pipeline, til å bygge et Docker image fra Docker filen
+* Docker image skal lastes opp til  Registry (Docker Hub)
+* Hvis bygget går okey, og det dukker opp en nytt container image i registry- skal Pipeline deploye til CI miljøet (heroku)
+
+# Oppgave 3 og Overvåkning og varsling
+
+Denne oppgaven består av å implementere overvåkning, og varsling i applikasjonen.
+
+- Implementer infrastruktur for varsling ved hjelp av SAAS tjenesten OpsGenie  
+- Implementer infrastruktur for overvåkning ved hjelp av SAAS tjenesten  StatusCake
+
+Infrastrukturen skal opprettes ved hjelp av Terraform. Dere trenger *ikke* inkludere dette i CI pipeline / travis. Dere kan anta at eksamninator kjører terraform fra lokal maskin med sine egne nøkler/hemmeligheter for å sjekke oppgaven.
+
+# Oppgave 4 Metrics
+
+Applikasjonen skal logge egendefinerte metrics. Med det menes at man på valgte steder i applikasjonskoden skal logge datapunkter ved hjelp av rammeverket Micrometer.
+
+I evalueringen vektlegges det at man ppplikasjonen er innholdsrik nok til å demonstrere forståelse av - og bruk av minst følgende type metrics  gauge, counter, DistributionSummary, Timer, LongTaskTimer.
+
+Applikasjonen skal være konfigurert for levering av Metrics mot InfluxDB. Konfigurasjon og provisjonering av InfluxDB og skal skje ved hjelp av Terraform.
+
+# Oppgave 5 Applikasjonslogger
+
+Denne oppgaven består av å bruke en SAAS tjeneste, [Logz.io](https://app.logz.io/) for innsamling, visualisering og analyse av logger. Dere skal utvide applikasjonen på en slik måte at logger sendes til denne tjenesten.
+
+OBS. Dere må ikke bruke Logz.io som en Heroku-addon. Det koster penger.
