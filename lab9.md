@@ -12,7 +12,9 @@ kalles en "backend" i Terraform.
 Jeg har laget AWS nøkler for dere slik at dere kan lagre terraform state på objektlagringstjenesten til Amazon Web Services, S3. 
 
 Terraform _provider.tf_ skal da se slik ut 
-```terraform {
+
+```
+terraform {
   backend "s3" {
     bucket = "pgr301bucket"
     key    = "<unik_id>/terraform.tfstate"
