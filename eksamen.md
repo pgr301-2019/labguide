@@ -21,67 +21,66 @@ Din jobb er å få prosjektet raskt i gang på riktig måte, med DevOps prinispp
 ## Krav til Applikasjonen
 
 * REST Endepunkt for ny geigerteller. Svare på POST til /device og returnere et objekt med en unik identifikator "deviceId"
-* REST Endepunkt for ny måling av stråling og lokasjon (lat, lng). POST /device/{deviceId}/measurement  
+* REST Endepunkt for ny måling av stråling og lokasjon (lat, lng, sievert). POST /device/{deviceId}/measurement  
 * REST Endepunkt for å hente en eller flere målinger for en device. GET til /device/{id}/measurements
-* REST Endepunkt for å liste alle tellere. GET til /devices
+* REST Endepunkt for å liste alle målere. GET til /devices
 
-
-Payload for REST endepunkter kan dere bestemme selv.
+Payload for responser kan dere bestemme selv.
 
 ## Krav til leveransen
 
-* Applikasjonen og tilhørende DevOps infrastruktur skal gjøres tilgjenglig i GitHib en eller flere repositories. Du står fritt til å velge hvor mange.
+* Applikasjonen og tilhørende DevOps infrastruktur skal gjøres tilgjenglig på GitHib
 * Repositories som du lagert må være offentlige
-* Du må lage en annonym Github bruker - brukernavnet må være utformet slik at det ikke går ann å utlede hvem du er basert på navnet.(Det må ikke være mulig ut ifra koden å identifsere studenten. Det er viktig å ikke benytte @author tags osv.)
-* Du skal levere et dokument (tekstfil) i wiseflow som lenker til relevante repositories i GitHub.
+* Du skal lage to repositories, ett for infrastruktur og ett for applikasjon. 
+* Du skal levere et dokument (tekstfil) i wiseflow som lenker til leverte repositories i GitHub.
 * Applikasjonen må ha database, men kan bruke en "embeded" som feks H2
-* Applikasjonen må ha enhetstester, testdekning er ikke viktig.
+* Applikasjonen må ha *meningsfylte* enhetstester, testdekning er ikke viktig.
+* Du må lage en annonym Github bruker - brukernavnet må være utformet slik at det ikke går ann å utlede hvem du er basert på navnet.(Det må ikke være mulig ut ifra koden å identifsere studenten. Det er viktig å ikke benytte @author tags osv.)
 
 ## Evaluering
 
 Applikasjonen skal være skrevet i henhold til  prinsipper i [the twelve factor app](https://12factor.net/)
 
-Det vil bli gitt en Score per oppgave; Pipeline, Docker, Overvåkning, Metrics og logger. Samlet score, sammen med en vurdering av applikasjonen sin etterlevelser av 12 factor, gir grunnlag for karakter.
+Det vil bli gjort en vurdering per oppgavene nevnt under; Pipeline, Docker, Overvåkning, Metrics og logger. En samlet vurdering av selve applikasjonen og disse oppgavene vil utgjøre karakteren.   
 
 # Oppgave 1 -  Pipeline
 
 ## Infrastruktur
 
-* Det skal opprettes tre miljøer
+* Det skal opprettes tre applikasjoner i Heroku i en Heroku Pipeline. 
 
 - CI (Contuinous integration) - Master branch i applikasjon-repository skal til enhver tid deployes i dette miljøet, dersom enhetstestene i prosjektet ikke feiler.
 - Stage - Dette er et miljø som typisk brukes for tester, for eksmpel ytelses- eller sikkerhetstester.
 - Prod - Dette er miljøet som kundene- eller brukerene av løsningen opplever.
 
-Nødvendig infrastruktur skal så opprettes med Terraform. Dere kan anta at eksaminator har terraform installert på PC for å etablere infrastrukturen. Instruksjoner til eksamninator skal gis i en README fil.
+Nødvendig infrastruktur skal  opprettes med Terraform.  * Eksaminator har ikke terraform installert på sin maskin. Travis skal opprette infrastrukturen * 
 
 ## Oppgave 1 - CI Pipeline
 
-Det skal lages en CI/CDpipeline for applikasjonen ved hjelp av Travis CI
-
-* CI/CD Pipeline skal bygge både infrastruktur og kode.
-* Pipeline skal  deploye hver commit på master branch til "CI" miljøet.
-* Deployment fra CI-miljø videre til Stage og produksjon skal i utgangspunktet skje manuelt ved at man promoterer applikasjonen i Heroku UI (Eller CLI). Studentene kan fritt velge å implementre kontinuerlig deployment til stage, og fra stage til prod - men det gis ikke poeng for dette.
+* Det skal lages en CI/CDpipeline for applikasjonen ved hjelp av Travis CI. 
+* Det skal også være en tilsvarende pipeline for infrastruktur.
+* Pipeline skal  deploye hver commit på master branch til "CI" miljøet i heroku, ved ok bygg og når testene ikke feiler. 
+* Deployment fra CI-miljø videre til Stage og produksjon skal skje manuelt ved at man promoterer applikasjonen i Heroku UI (Eller CLI). Studentene kan fritt velge å implementre kontinuerlig deployment til stage, og fra stage til prod - men det gis ikke poeng for dette.
 
 # Oppgave 2 Docker
 
-I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch. Travis skal også gjøre en push til DockerHub.
+I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch. Travis skal også gjøre en push til DockerHub, og samtidig sørge for at CI miljøet i Heroku blir oppdatert med det nye imaget. 
 
 Oppgaver som må løses
 
 * Du skal skrive en Dockerfil som kan brukes for å bygge et Container Image av Spring Boot applikasjonen din.
 * Du skal  utvide pipeline, til å bygge et Docker image fra Docker filen
-* Docker image skal lastes opp til  Registry (Docker Hub)
-* Hvis bygget går okey, og det dukker opp en nytt container image i registry- skal Pipeline deploye til CI miljøet (heroku)
+* Docker image skal lastes opp til Docker Hub
+* Hvis bygget går okey, og det dukker opp en nytt container Docker Hub skal Pipeline deploye til CI miljøet i Heroku
 
 # Oppgave 3 og Overvåkning og varsling
 
 Denne oppgaven består av å implementere overvåkning, og varsling i applikasjonen.
 
 - Implementer infrastruktur for varsling ved hjelp av SAAS tjenesten OpsGenie  
-- Implementer infrastruktur for overvåkning ved hjelp av SAAS tjenesten  StatusCake
+- Implementer infrastruktur for overvåkning ved hjelp av SAAS tjenesten StatusCake
 
-Infrastrukturen skal opprettes ved hjelp av Terraform. Dere trenger *ikke* inkludere dette i CI pipeline / travis. Dere kan anta at eksamninator kjører terraform fra lokal maskin med sine egne nøkler/hemmeligheter for å sjekke oppgaven.
+Infrastrukturen skal opprettes ved hjelp av Terraform.
 
 # Oppgave 4 Metrics
 
@@ -93,6 +92,8 @@ Applikasjonen skal være konfigurert for levering av Metrics mot InfluxDB. Konfi
 
 # Oppgave 5 Applikasjonslogger
 
-Denne oppgaven består av å bruke en SAAS tjeneste, [Logz.io](https://app.logz.io/) for innsamling, visualisering og analyse av logger. Dere skal utvide applikasjonen på en slik måte at logger sendes til denne tjenesten.
+Denne oppgaven består av å bruke en SAAS tjeneste, [Logz.io](https://app.logz.io/) for innsamling, visualisering og analyse av logger. Dere skal utvide applikasjonen på en slik måte at logger sendes til denne tjenesten. Spring boot applikasjonen må modifiseres slik at loggene sendes til tjenesten. 
 
 OBS. Dere må ikke bruke Logz.io som en Heroku-addon. Det koster penger.
+
+LYKKE TIL!
