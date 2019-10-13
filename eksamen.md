@@ -12,7 +12,7 @@ På den måten kan de som måtte ønske å ta løsningen i bruk ( for eksempel e
 
 "DominiGeiger" er et selskap som skal starte salg av personlige «wearable» geigertellere til privatpersoner i Europa. Veksten har vært astronomisk grunnet en befolkning i stor panikk etter serien «Chernobyl» på HBO. Selskapet  planlegger utvidelse i Asia etter det ble kjent at Japansk Franchise, «Fukushima Daiichi » også skal vises på HBO i 2020.
 
-Data kommer inn i høy hastighet, over HTTP, og det forventes at nær 90% av familier i Europa,  med høy grad av strålingsangst,  vil skaffe seg en slik teller. Dette er naturligvis bra for DominiGeiger, men det betyr samtidig at løsningen må skaledere bra, og de har derfor valgt å satse på skyen.
+Data kommer inn i høy hastighet, over HTTP, og det forventes at nær 90% av familier i Europa,  med høy grad av strålingsangst,  vil skaffe seg en slik teller. Dette er naturligvis bra for DominiGeiger, men det betyr samtidig at løsningen må skalere bra, og de har derfor valgt å satse på skyen.
 
 Geigertellerne er festet på brukerens klær, og derfor samler DomiGeiger inn hyppig og nøyaktig lokasjonsdata. Denne informasjonen skal selges til store internasjonale selskaper i en auksjonsløsning som skal utvikles senere (ikke en del av oppgaven)
 
@@ -70,18 +70,13 @@ Nødvendig infrastruktur skal  opprettes med Terraform.  * Eksaminator har ikke 
 
 ## Oppgave 2 Docker
 
-I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch. Travis skal også gjøre en push til DockerHub, og samtidig sørge for at *Prod* miljøet i Heroku blir oppdatert med det nye imaget.  
+I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch - deretter gjør en push av dette til DockerHub. Heroku har begrenset støtte for Docker i pipelines, så dere trenger i denne oppgaven ikke løse deployment av Docker Image fra Docker hub til Heroku. 
 
 Oppgaver som må løses
 
 * Du skal skrive en Dockerfil som kan brukes for å bygge et Container Image av Spring Boot applikasjonen din.
 * Du skal  utvide pipeline, til å bygge et Docker image fra Docker filen
 * Docker image skal lastes opp til Docker Hub
-* Hvis bygget går okey, og det dukker opp en nytt container Docker Hub skal Pipeline deploye til *prod* miljøet i Heroku.
-
-Promotering i en pipeline fungerer ikke med Docker deployments in Heroku. 
-
-Dere kan også velge å levere på Google Cloud Platform i denne oppgaven forutsatt at dere gir instruksjoner i README - og at all infrastruktur i GCP lages med terraform. 
 
 ## Oppgave 3 og Overvåkning og varsling
 
