@@ -35,7 +35,7 @@ For at Travis skal kunne deploye kode til Heroku - og for at Travis skal få lov
 
 ```
 travis encrypt HEROKU_EMAIL=your.email@somewhere.com --add
-travis encrypt HEROKU_API_KEY=69ecad49-7d50-416a-8861-329ca3fa2940 --add
+travis encrypt HEROKU_API_KEY=<API_KEY> --add
 travis encrypt AWS_ACCESS_KEY_ID=<KEY> --add
 travis encrypt AWS_SECRET_ACCESS_KEY=<SECRET_ACCESS_KEY>
 ```
