@@ -25,12 +25,22 @@ terraform {
 
 # Infrastruktur - repo
 
-Det kan være god praksis å skille infrastruktur fra app (det er diskusjoner rundt dette...) - og i dette faget velger i å lage et eget 
-github repository for Github koden vår. Da er det enklere å lage en egen Travis pipeline, som reagerer på kun endringer i infrastrukturkoden. 
+Det kan være god praksis å skille infrastruktur fra app (det er diskusjoner rundt dette...) - og i dette faget velger i å lage et eget github repository for Github koden vår. Da er det enklere å lage en egen Travis pipeline, som reagerer på kun endringer i infrastrukturkoden. 
 
 * Lag et helt nytt repo for infrastruktur for Spring boot eksemplet. 
 * Flytt Terraform koden som du brukte for å lage en pipeline i Heroku dit. 
 * Se på https://github.com/pgr301-2019/infra-repo-example for inspirasjon
+
+## Hemmeligheter 
+
+For at Travis skal kunne deploye kode til Heroku - og for at Travis skal få lov til å skrive terraform state til AWS S3 - må vi legge til "hemmeligheter" med travis encrypt på kommandlinje 
+
+travis encrypt HEROKU_EMAIL=your.email@somewhere.com --add
+travis encrypt HEROKU_API_KEY=69ecad49-7d50-416a-8861-329ca3fa2940 --add
+travis encrypt AWS_ACCESS_KEY_ID=<KEY> --add
+travis encrypt AWS_SECRET_ACCESS_KEY=<SECRET_ACCESS_KEY>
+  
+Disse kommandoene krypterer hemmeligheter med repoets offentlige nøkke, og legger veridiene inn i .travis.yml - du må huske på å sjekke inn/pushe - filen etterpå. Disse verdiene / nøklene blir miljøvariabler og gjort tilgjengelig for Travis og applikasjonen.
 
 # Lek med pipeline
 
