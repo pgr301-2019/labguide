@@ -5,11 +5,9 @@ teammedlemmer kjører Terraform fra lokal maskin.
 
 # Terraform state
 
-Terraform har et konsept om "state" som i praksis er et JSON dokument som holder orden knytningen til de faktiske ressurser i infrastrukturen og 
-ressurser i terraform koden. Denne JSON filen oppdateres kontinuerlig, og må deles av teamet og med CI server. En lagring av slik state
-kalles en "backend" i Terraform. 
+Terraform har et konsept om "state" som i praksis er et JSON dokument som holder orden knytningen til de faktiske ressurser i infrastrukturen og terraform koden. Denne JSON filen oppdateres kontinuerlig når infrastrukturen endrer seg, og må deles av teamet og med CI server. En mekanisme for lagring av en slik fil kalles en "backend" i Terraform. 
 
-Jeg har laget AWS nøkler for dere slik at dere kan lagre terraform state på objektlagringstjenesten til Amazon Web Services, S3. 
+Jeg har laget AWS nøkler for dere slik at dere kan lagre terraform state på objektlagringstjenesten til Amazon Web Services, S3. Disse finner dere på Slack. *Disse må på ingen måte sjekkes inn i github*
 
 Terraform _provider.tf_ skal da se slik ut 
 
