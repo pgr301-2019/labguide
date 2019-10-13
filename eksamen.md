@@ -98,7 +98,8 @@ Applikasjonen skal logge egendefinerte metrics. Med det menes at man på valgte 
 
 I evalueringen vektlegges det at man ppplikasjonen er innholdsrik nok til å demonstrere forståelse av - og bruk av minst følgende type metrics  gauge, counter, DistributionSummary, Timer, LongTaskTimer.
 
-Applikasjonen skal være konfigurert for levering av Metrics mot InfluxDB. Konfigurasjon og provisjonering av InfluxDB og skal skje ved hjelp av Terraform.
+Applikasjonen skal være konfigurert for levering av Metrics mot InfluxDB. Dere kan anta at influxDB kjører lokalt i en egen container på  eksaminator sin maskin når  oppgaven rettes. 
+
 
 ## Oppgave 5 Applikasjonslogger
 
