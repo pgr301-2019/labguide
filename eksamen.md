@@ -43,11 +43,11 @@ Applikasjonen skal være skrevet i henhold til  prinsipper i [the twelve factor 
 
 Det vil bli gjort en vurdering per oppgavene nevnt under; Pipeline, Docker, Overvåkning, Metrics og logger. En samlet vurdering av selve applikasjonen og disse oppgavene vil utgjøre karakteren.   
 
-# Tilgjengelig infrastruktur 
+# Terraform state
 
 Terraform har et konsept om "state" som i praksis er et JSON dokument som holder orden knytningen til de faktiske ressurser i infrastrukturen og terraform koden. Denne JSON filen oppdateres kontinuerlig når infrastrukturen endrer seg, og må deles av teamet og med CI server. En mekanisme for lagring av en slik fil kalles en "backend" i Terraform.
 
-Jeg har laget AWS nøkler for dere slik at dere kan lagre terraform state på objektlagringstjenesten til Amazon Web Services, S3. Disse finner dere på Slack og på Canvas. Disse må på ingen måte sjekkes inn i github. 
+Deter laget AWS nøkler for dere slik at dere kan lagre terraform state på objektlagringstjenesten til Amazon Web Services, S3. Disse finner dere på Slack og på Canvas. Disse må på ingen måte sjekkes inn i github. Hvis disse under eksamensperioden må invalideres på grunn av lekasje - vil det bli gitt informasjon på både Slack og Canvas. 
 
 # Oppgave 1 -  Pipeline
 
@@ -70,14 +70,18 @@ Nødvendig infrastruktur skal  opprettes med Terraform.  * Eksaminator har ikke 
 
 ## Oppgave 2 Docker
 
-I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch. Travis skal også gjøre en push til DockerHub, og samtidig sørge for at CI miljøet i Heroku blir oppdatert med det nye imaget. 
+I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch. Travis skal også gjøre en push til DockerHub, og samtidig sørge for at *Prod* miljøet i Heroku blir oppdatert med det nye imaget.  
 
 Oppgaver som må løses
 
 * Du skal skrive en Dockerfil som kan brukes for å bygge et Container Image av Spring Boot applikasjonen din.
 * Du skal  utvide pipeline, til å bygge et Docker image fra Docker filen
 * Docker image skal lastes opp til Docker Hub
-* Hvis bygget går okey, og det dukker opp en nytt container Docker Hub skal Pipeline deploye til CI miljøet i Heroku
+* Hvis bygget går okey, og det dukker opp en nytt container Docker Hub skal Pipeline deploye til *prod* miljøet i Heroku.
+
+Promotering i en pipeline fungerer ikke med Docker deployments in Heroku. 
+
+Dere kan også velge å levere på Google Cloud Platform i denne oppgaven forutsatt at dere gir instruksjoner i README - og at all infrastruktur i GCP lages med terraform. 
 
 ## Oppgave 3 og Overvåkning og varsling
 
