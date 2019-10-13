@@ -33,11 +33,13 @@ Det kan være god praksis å skille infrastruktur fra app (det er diskusjoner ru
 
 For at Travis skal kunne deploye kode til Heroku - og for at Travis skal få lov til å skrive terraform state til AWS S3 - må vi legge til "hemmeligheter" med travis encrypt på kommandlinje 
 
+```
 travis encrypt HEROKU_EMAIL=your.email@somewhere.com --add
 travis encrypt HEROKU_API_KEY=69ecad49-7d50-416a-8861-329ca3fa2940 --add
 travis encrypt AWS_ACCESS_KEY_ID=<KEY> --add
 travis encrypt AWS_SECRET_ACCESS_KEY=<SECRET_ACCESS_KEY>
-  
+```
+
 Disse kommandoene krypterer hemmeligheter med repoets offentlige nøkke, og legger veridiene inn i .travis.yml - du må huske på å sjekke inn/pushe - filen etterpå. Disse verdiene / nøklene blir miljøvariabler og gjort tilgjengelig for Travis og applikasjonen.
 
 # Lek med pipeline
