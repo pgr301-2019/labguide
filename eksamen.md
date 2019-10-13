@@ -62,7 +62,7 @@ Nødvendig infrastruktur skal  opprettes med Terraform.  * Eksaminator har ikke 
 * Pipeline skal  deploye hver commit på master branch til "CI" miljøet i heroku, ved ok bygg og når testene ikke feiler. 
 * Deployment fra CI-miljø videre til Stage og produksjon skal skje manuelt ved at man promoterer applikasjonen i Heroku UI (Eller CLI). Studentene kan fritt velge å implementre kontinuerlig deployment til stage, og fra stage til prod - men det gis ikke poeng for dette.
 
-# Oppgave 2 Docker
+## Oppgave 2 Docker
 
 I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch. Travis skal også gjøre en push til DockerHub, og samtidig sørge for at CI miljøet i Heroku blir oppdatert med det nye imaget. 
 
@@ -73,7 +73,7 @@ Oppgaver som må løses
 * Docker image skal lastes opp til Docker Hub
 * Hvis bygget går okey, og det dukker opp en nytt container Docker Hub skal Pipeline deploye til CI miljøet i Heroku
 
-# Oppgave 3 og Overvåkning og varsling
+## Oppgave 3 og Overvåkning og varsling
 
 Denne oppgaven består av å implementere overvåkning, og varsling i applikasjonen.
 
@@ -82,7 +82,7 @@ Denne oppgaven består av å implementere overvåkning, og varsling i applikasjo
 
 Infrastrukturen skal opprettes ved hjelp av Terraform.
 
-# Oppgave 4 Metrics
+## Oppgave 4 Metrics
 
 Applikasjonen skal logge egendefinerte metrics. Med det menes at man på valgte steder i applikasjonskoden skal logge datapunkter ved hjelp av rammeverket Micrometer.
 
@@ -90,7 +90,7 @@ I evalueringen vektlegges det at man ppplikasjonen er innholdsrik nok til å dem
 
 Applikasjonen skal være konfigurert for levering av Metrics mot InfluxDB. Konfigurasjon og provisjonering av InfluxDB og skal skje ved hjelp av Terraform.
 
-# Oppgave 5 Applikasjonslogger
+## Oppgave 5 Applikasjonslogger
 
 Denne oppgaven består av å bruke en SAAS tjeneste, [Logz.io](https://app.logz.io/) for innsamling, visualisering og analyse av logger. Dere skal utvide applikasjonen på en slik måte at logger sendes til denne tjenesten. Spring boot applikasjonen må modifiseres slik at loggene sendes til tjenesten. 
 
