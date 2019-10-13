@@ -65,3 +65,9 @@ I denne øvingen skal vi bli kjent med Metrics-rammeverket Micrometer for Spring
 
 [Se lab guide for detaljer](lab8.md)
 
+### LAB 9 
+
+I denne øvingen skal vi la travis CI kjøre infrastrukturkoden vår - og vi skal se på overvåkning av endepunkter med en tjeneste som heter StatusCake 
+[Se lab guide for detaljer](lab9.md)
+
+
