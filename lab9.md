@@ -45,6 +45,10 @@ Disse kommandoene krypterer hemmeligheter med repoets offentlige nøkke, og legg
 Dere skal nå være i stand til å endre på infrastruktur koden, og Travis vil endre på infrastrukturen. Det er slik dere bør 
 jobbe med IAC - og det er det eneste som virker for team og prosjekter av litt størrelse. 
 
+# Utvid infrakoden med overvåking
 
+Bruk dokumentasjonen til StatusCake provider for Terraform ; https://www.terraform.io/docs/providers/statuscake/index.html - og legg til overvåkning på endepunktene på en test applikasjon - eller en annen tjeneste dere vil overvåke. Dere kan for eksempel besøke Lab3 på nytt og deploye en enkel heroku applikasjon. 
 
+* Bruk travis encrypt til å legge til StatusCake credentials til byggejobben (STATUSCAKE_APIKEY, STATUSCAKE_USERNAME)
+* Se på https://github.com/pgr301-2019/infra-repo-example for inspirasjon
 
