@@ -49,7 +49,7 @@ Terraform har et konsept om "state" som i praksis er et JSON dokument som holder
 
 Deter laget AWS nøkler for dere slik at dere kan lagre terraform state på objektlagringstjenesten til Amazon Web Services, S3. Disse finner dere på Slack og på Canvas. Disse må på ingen måte sjekkes inn i github. Hvis disse under eksamensperioden må invalideres på grunn av lekasje - vil det bli gitt informasjon på både Slack og Canvas. 
 
-# Oppgave 1 -  Pipeline
+## Oppgave 1 -  Pipeline
 
 ## Infrastruktur
 
@@ -61,7 +61,7 @@ Deter laget AWS nøkler for dere slik at dere kan lagre terraform state på obje
 
 Nødvendig infrastruktur skal  opprettes med Terraform.  * Eksaminator har ikke terraform installert på sin maskin. Travis skal opprette infrastrukturen * 
 
-## Oppgave 1 - CI Pipeline
+## Travis
 
 * Det skal lages en CI/CDpipeline for applikasjonen ved hjelp av Travis CI. 
 * Det skal også være en tilsvarende pipeline for infrastruktur.
