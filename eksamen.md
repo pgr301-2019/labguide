@@ -83,7 +83,7 @@ Oppgaver som må løses
 * Du skal  utvide pipeline, til å bygge et Docker image fra Docker filen
 * Docker image skal lastes opp til Docker Hub
 
-## Oppgave 3 og Overvåkning og varsling
+## Oppgave 3 Overvåkning og varsling
 
 Denne oppgaven består av å implementere overvåkning, og varsling i applikasjonen.
 
