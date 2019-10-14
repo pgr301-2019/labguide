@@ -26,8 +26,11 @@ terraform {
 Det kan være god praksis å skille infrastruktur fra app (det er diskusjoner rundt dette...) - og i dette faget velger i å lage et eget github repository for Github koden vår. Da er det enklere å lage en egen Travis pipeline, som reagerer på kun endringer i infrastrukturkoden. 
 
 * Lag et helt nytt repo for infrastruktur for Spring boot eksemplet. 
+* Legg til Repoet til i Travis CI. 
 * Flytt Terraform koden som du brukte for å lage en pipeline i Heroku dit. 
 * Se på https://github.com/pgr301-2019/infra-repo-example for inspirasjon
+
+Ps Husk at build.sh må være executable (chmod +x build.sh)
 
 ## Hemmeligheter 
 
