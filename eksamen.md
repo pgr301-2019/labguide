@@ -75,7 +75,7 @@ Nødvendig infrastruktur skal  opprettes med Terraform.  * Eksaminator har ikke 
 
 ## Oppgave 2 Docker
 
-I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch - deretter gjør en push av dette til DockerHub. Heroku har begrenset støtte for Docker i pipelines, så dere trenger i denne oppgaven ikke løse deployment av Docker Image fra Docker hub til Heroku. 
+I denne oppgaven skal dere sørge for at Travis bygger et nytt Docker image for hver commit til applikasjonen sin master branch - deretter gjør en push av dette til DockerHub. Heroku har begrenset støtte for Docker i pipelines, så dere trenger ikke å løse deployment av Docker Image fra Docker hub til Heroku. 
 
 Oppgaver som må løses
 
@@ -99,6 +99,8 @@ Applikasjonen skal logge egendefinerte metrics. Med det menes at man på valgte 
 I evalueringen vektlegges det at man ppplikasjonen er innholdsrik nok til å demonstrere forståelse av - og bruk av minst følgende type metrics  gauge, counter, DistributionSummary, Timer, LongTaskTimer.
 
 Applikasjonen skal være konfigurert for levering av Metrics mot InfluxDB. Dere kan anta at influxDB kjører lokalt i en egen container på  eksaminator sin maskin når  oppgaven rettes. 
+
+Dere må bruke Spring profiles og @Configuration i Spring til i bruke SimpleMeterRegistry når applikasjonen ikke kjører lokalt.
 
 
 ## Oppgave 5 Applikasjonslogger
