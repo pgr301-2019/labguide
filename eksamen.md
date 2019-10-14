@@ -40,6 +40,11 @@ Payload for responser kan dere bestemme selv.
 ## Evaluering
 
 Applikasjonen skal være skrevet i henhold til  prinsipper i [the twelve factor app](https://12factor.net/)
+Det blir spesielt lagt vekt på ; 
+
+- https://12factor.net/config 
+- https://12factor.net/backing-services
+- https://12factor.net/logs
 
 Det vil bli gjort en vurdering per oppgavene nevnt under; Pipeline, Docker, Overvåkning, Metrics og logger. En samlet vurdering av selve applikasjonen og disse oppgavene vil utgjøre karakteren.   
 
