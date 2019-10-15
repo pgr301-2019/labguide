@@ -21,7 +21,7 @@ Din jobb er å få prosjektet raskt i gang på riktig måte, med DevOps prinispp
 ## Krav til Applikasjonen
 
 * REST Endepunkt for ny geigerteller. Svare på POST til /devices og returnere et objekt med en unik identifikator "deviceId"
-* REST Endepunkt for ny måling av stråling og lokasjon (lat, lng, sievert). POST /devices/{deviceId}/measurement  
+* REST Endepunkt for ny måling av stråling og lokasjon (lat, lng, sievert). POST /devices/{deviceId}/measurements
 * REST Endepunkt for å hente en eller flere målinger for en device. GET til /devices/{id}/measurements
 * REST Endepunkt for å liste alle målere. GET til /devices
 
