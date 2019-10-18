@@ -100,7 +100,7 @@ I evalueringen vektlegges det at man ppplikasjonen er innholdsrik nok til å dem
 
 Applikasjonen skal være konfigurert for levering av Metrics mot InfluxDB. Dere kan anta at influxDB kjører lokalt i en egen container på  eksaminator sin maskin når  oppgaven rettes. 
 
-Dere må bruke Spring profiles og @Configuration i Spring til i bruke SimpleMeterRegistry når applikasjonen ikke kjører lokalt.
+Dere må bruke Spring profiles og @Configuration mekanismen i Spring til å bruke SimpleMeterRegistry når applikasjonen ikke kjører lokalt.
 
 
 ## Oppgave 5 Applikasjonslogger
