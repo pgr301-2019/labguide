@@ -10,7 +10,7 @@ kommer dere forbi side en i registreringsskjemaet.
 # Ship logs 
 
 * Se på "Ship logs" fanen i Logz.io, og let deg frem til "Libraries" og "Java Logback appender". Kopier logback.xml inn i en applikasjon du 
-har gjort fra tidligere Lab 
+har gjort fra tidligere Lab (src/main/resources)
 * Se på kodeeksemplet og lag punker i applikasjonen din som logger på ulike lognivåer 
 
 Start applikasjonen lokalt - og du vil se at det kommer mindre logger i konsollet. Se på "Live view" i logz.io - loggene fra applikasjonen slal nå havne der.
