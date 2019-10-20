@@ -55,7 +55,7 @@ Som du har lært i "The twelve factor app", skal konfigurasjon eksternaliseres t
  
 Bli kjent med hvordan dette gjøres ved å deploye applikasjonen til heroku - og la URL og Token være miljøvariable istedet for en del av logback.xml - Følg instruksjoner på ; https://devcenter.heroku.com/articles/config-vars
 
-For å lage en Heroku applikasjon av Spring Boot koden du jobber med,  
+For å lage en Heroku applikasjon av Spring Boot koden du jobber med (dersom du ikke har en allerede)
 
 ```bash
 heroku create
@@ -64,14 +64,12 @@ git push heroku master
 
 Se ; https://devcenter.heroku.com/articles/git - hvis du trenger repetisjon av hvordan dette gjøres. 
 
-
-
 ## Lek med Logz.io
 
 Bli kjent med minst 
 
 * Live Tail
-* kibana og "Discover" panelet, der man kan søke etter logger
+* kibana og "Discover" panelet, der man kan søke etter logger og filtrere på ulike felter i loggene
 
 
 
