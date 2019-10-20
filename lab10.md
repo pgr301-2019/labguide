@@ -1,13 +1,13 @@
-## Lab 10 - Logz.io
+# Lab 10 - Logz.io
 
 I denne labben skal vi se hvor enkelt det er å sende logger til en SAAS tjeneste som heter logz.io fra Spring Boot applikasjonen
 
-# Sign up
+## Sign up
 
 https://app.logz.io - Det er meldt om problemer med å gjør sign up med Chrome og enkelt ad- blokkere. Bruk annen nettleser hvis dere ikke 
 kommer dere forbi side en i registreringsskjemaet. 
 
-# Ship logs 
+## Ship logs 
 
 * Se på "Ship logs" fanen i Logz.io, og let deg frem til "Libraries" og "Java Logback appender". Kopier logback.xml inn i en applikasjon du 
 har gjort fra tidligere Lab (src/main/resources)
@@ -15,7 +15,7 @@ har gjort fra tidligere Lab (src/main/resources)
 
 Start applikasjonen lokalt - og du vil se at det kommer mindre logger i konsollet. Se på "Live view" i logz.io - loggene fra applikasjonen slal nå havne der.
 
-# Pass på å logge både til standard out OG Logz.io
+## Pass på å logge både til standard out OG Logz.io
 
 Modifiser Logback.xml slik at du også kan se loggene uten å gå til logz.io
 
