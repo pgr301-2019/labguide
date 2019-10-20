@@ -15,7 +15,7 @@ har gjort fra tidligere Lab (src/main/resources)
 
 Start applikasjonen lokalt - og du vil se at det kommer mindre logger i konsollet. Se på "Live view" i logz.io - loggene fra applikasjonen slal nå havne der.
 
-## Pass på å logge både til standard out OG Logz.io
+## Pass på å logge både til standard out og Logz.io
 
 Modifiser Logback.xml slik at du også kan se loggene uten å gå til logz.io
 
