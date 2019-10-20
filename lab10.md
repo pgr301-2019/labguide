@@ -1,8 +1,8 @@
 # Lab 10 - Logz.io
 
-I denne labben skal vi se hvor enkelt det er å sende logger til en SAAS tjeneste som heter logz.io fra Spring Boot applikasjonen
+I denne labben skal vi se hvor enkelt det er å sende logger til en SAAS tjeneste som heter logz.io fra Spring Boot applikasjonen. Vi skal også se på 12 factor prinsippet "Config" ved å ikke hardkode token og endepunlt for Logz.io i property filer. 
 
-## Sign up
+## Registrer deg på logz.io
 
 https://app.logz.io - Det er meldt om problemer med å gjør sign up med Chrome og enkelt ad- blokkere. Bruk annen nettleser hvis dere ikke 
 kommer dere forbi side en i registreringsskjemaet. 
