@@ -46,7 +46,8 @@ Modifiser Logback.xml slik at du også kan se loggene uten å gå til logz.io
         <appender-ref ref="LogzioLogbackAppender"/>
         <appender-ref ref="STDOUT" />
     </root>
-</configuration>```
+</configuration>
+```
 
 ## Eksternalisering av config (12 factor app prinsipp)
 
