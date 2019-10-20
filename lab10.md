@@ -49,14 +49,29 @@ Modifiser Logback.xml slik at du også kan se loggene uten å gå til logz.io
 </configuration>
 ```
 
-## Eksternalisering av config (12 factor app prinsipp)
+## Heroku - Eksternalisering av config (12 factor app prinsipp)
 
-Som du har lært i "The twelfe factor app", skal konfigurasjon eksternaliseres til miljøet. Ta ut logzio IRL pg logzio token til miljøvariable. 
+Som du har lært i "The twelfe factor app", skal konfigurasjon eksternaliseres til miljøet. Ta ut logzio IRL pg logzio token til miljøvariable. Dette kan gjøres ved å sette inn $LOGZ_TOKEN og $LOGZ_URL inn i logback filen, og sette verdiene LOGZ_URL og LOGZ_TOKEN som miljøvariable 
+ 
+Bli kjent med hvordan dette gjøres ved å deploye applikasjonen til heroku - og la URL og Token være miljøvariable istedet for en del av logback.xml - Følg instruksjoner på ; https://devcenter.heroku.com/articles/config-vars
 
-Dette kan gjøres ved å sette inn $LOGZ_TOKEN og $LOGZ_URL inn i logback filen, og sette verdiene LOGZ_URL og LOGZ_TOKEN som miljøvariable 
+For å lage en Heroku applikasjon av Spring Boot koden du jobber med,  
 
-Når du kjører applikasjonen lokalt kan man selv sette miljøvariable med set (windows) eller export (linux/osx). Hvis applikasjonene kjører på Heroku - kan vi bruke Heroku CLI. 
+```bash
+heroku create
+git push heroku master
+```
 
-Bli kjent med hvordan dette gjøres ved å lage en applikasjon i Heroku som logger til Logz.io - og der token og URL for logz.io ikke er hardkodet. 
+Se ; https://devcenter.heroku.com/articles/git - hvis du trenger repetisjon av hvordan dette gjøres. 
+
+
+
+## Lek med Logz.io
+
+Bli kjent med minst 
+
+* Live Tail
+* kibana og "Discover" panelet, der man kan søke etter logger
+
 
 
