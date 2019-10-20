@@ -26,7 +26,7 @@ Modifiser Logback.xml slik at du også kan se loggene uten å gå til logz.io
     <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
     <appender name="LogzioLogbackAppender" class="io.logz.logback.LogzioLogbackAppender">
         <token>asasaas</token>
-        <logzioUrl>https://listener.logz.io:8071</logzioUrl>
+        <logzioUrl>https://some url: some port </logzioUrl>
         <logzioType>myType</logzioType>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>DEBUG</level>
@@ -47,3 +47,13 @@ Modifiser Logback.xml slik at du også kan se loggene uten å gå til logz.io
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>```
+
+## Eksternalisering av config (12 factor)
+
+Som du har lært i "The twelfe factor app", skal konfigurasjon eksternaliseres til miljøet. Ta ut logzio IRL pg logzio token til miljøvariable. 
+
+Dette kan gjøres ved å sette inn $LOGZ_TOKEN og $LOGZ_URL inn i logback filen, og sette verdiene LOGZ_URL og LOGZ_TOKEN som miljøvariable 
+
+## bli kjent med "Live tail"
+
+
