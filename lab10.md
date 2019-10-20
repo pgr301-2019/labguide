@@ -48,12 +48,14 @@ Modifiser Logback.xml slik at du også kan se loggene uten å gå til logz.io
     </root>
 </configuration>```
 
-## Eksternalisering av config (12 factor)
+## Eksternalisering av config (12 factor app prinsipp)
 
 Som du har lært i "The twelfe factor app", skal konfigurasjon eksternaliseres til miljøet. Ta ut logzio IRL pg logzio token til miljøvariable. 
 
 Dette kan gjøres ved å sette inn $LOGZ_TOKEN og $LOGZ_URL inn i logback filen, og sette verdiene LOGZ_URL og LOGZ_TOKEN som miljøvariable 
 
-## bli kjent med "Live tail"
+Når du kjører applikasjonen lokalt kan man selv sette miljøvariable med set (windows) eller export (linux/osx). Hvis applikasjonene kjører på Heroku - kan vi bruke Heroku CLI. 
+
+Bli kjent med hvordan dette gjøres ved å lage en applikasjon i Heroku som logger til Logz.io - og der token og URL for logz.io ikke er hardkodet. 
 
 
