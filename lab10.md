@@ -2,10 +2,11 @@
 
 I denne labben skal vi se hvor enkelt det er å sende logger til en SAAS tjeneste som heter logz.io fra Spring Boot applikasjonen. Vi skal også se på 12 factor prinsippet "Config" ved å ikke hardkode token og endepunlt for Logz.io i property filer. 
 
+I denne øvelsen kan det være lurt å bruke en enkel Spring Boot applikasjon som kan deployes til Heroku. 
+
 ## Registrer deg på logz.io
 
-https://app.logz.io - Det er meldt om problemer med å gjør sign up med Chrome og enkelt ad- blokkere. Bruk annen nettleser hvis dere ikke 
-kommer dere forbi side en i registreringsskjemaet. 
+https://app.logz.io - Det er meldt om problemer med å gjør sign up med Chrome og enkelt ad- blokkere. Bruk annen nettleser hvis dere ikke kommer dere forbi side en i registreringsskjemaet. 
 
 ## Ship logs 
 
@@ -51,7 +52,7 @@ Modifiser Logback.xml slik at du også kan se loggene uten å gå til logz.io
 
 ## Heroku - Eksternalisering av config (12 factor app prinsipp)
 
-Som du har lært i "The twelve factor app", skal konfigurasjon eksternaliseres til miljøet. Ta ut logzio IRL pg logzio token til miljøvariable. Dette kan gjøres ved å sette inn $LOGZ_TOKEN og $LOGZ_URL inn i logback filen, og sette verdiene LOGZ_URL og LOGZ_TOKEN som miljøvariable 
+Som du har lært i "The twelve factor app", skal konfigurasjon eksternaliseres til miljøet. Ta ut logzio URL pg logzio token til miljøvariable. Dette kan gjøres ved å sette inn $LOGZ_TOKEN og $LOGZ_URL inn i logback filen, og sette verdiene LOGZ_URL og LOGZ_TOKEN som en miljøvariabel 
  
 Bli kjent med hvordan dette gjøres ved å deploye applikasjonen til heroku - og la URL og Token være miljøvariable istedet for en del av logback.xml - Følg instruksjoner på ; https://devcenter.heroku.com/articles/config-vars
 
