@@ -70,6 +70,6 @@ Bli kjent med minst
 
 * Live Tail
 * kibana og "Discover" panelet, der man kan søke etter logger og filtrere på ulike felter i loggene
-
+* Visialiering. Prøv gjerne mer avanserte greier - men i alle fall et Pie chart som fordeler logger i INFO, DEBUG, ERROR
 
 
