@@ -18,7 +18,7 @@ opprette følgende med terraform. (Du kan kjøre terraform lokalt)
 
 For å få dette til må du ha følgende provider deklarasjon 
 
-````provider "opsgenie" {
+```provider "opsgenie" {
   version = "0.2.3"
   api_url = "api.eu.opsgenie.com"
 }
