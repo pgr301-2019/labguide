@@ -76,7 +76,7 @@ I denne øvelsen shipper vi logger til logz.io. Det kan være lurt på besøke l
 
 [Se lab guide for detaljer](lab10.md)
 
-### LAB 10
+### LAB 11
 
 I denne øvelsen leker vi mer med Terrafomr og bruker en provider for OpsGenie som er en løsning for overåkning og vaktrotasjon. 
 
