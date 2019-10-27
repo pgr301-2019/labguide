@@ -1,4 +1,4 @@
-# Bli kjent med Terraform provider 
+# Bli kjent med Terraform provider for OpsGenie
 
 Målet for denne øvingen er å bli bedre kjent med terraform ved å bruke verktøyet til å provisjonere noe "ikke teknisk" som brukere, team
 og grupper for overvåkning av en løsning.
