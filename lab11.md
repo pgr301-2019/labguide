@@ -33,5 +33,4 @@ resource "opsgenie_user" "glenn" {
 ```
 
 Miljøvariabel for Token settes feks slik ;set/export OPSGENIE_API_KEY=xyz123455-488b-4a1b-a2a7-æøå543212
-
-Det er bare å begynne å se på dokumentasjonen og jobbe med oppgaven. 
+Kjør terraform på lokal maskin. Det er bare å begynne å se på dokumentasjonen og improvisere ut ifra det.
