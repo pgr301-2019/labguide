@@ -3,7 +3,7 @@
 
 Målet med oppgaven er at Travis skal gjøre kontinuerlig deployment av applikasjonen fra master- men at endringen ikke skal gå "live" før du selv velger å promotrere applikasjonen som er i "staging". 
 
-## Leg en ny heroku pipeline 
+## Lag en ny heroku pipeline 
 
 Øvingen bygger på den forrige øvingen før du begynner, sørg for at du har følgende på plass
 
